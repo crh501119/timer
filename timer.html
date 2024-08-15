@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投影片計時器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .slide-timer {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        .statistics {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>簡報投影片計時器</h1>
+    <div class="slide-timer" id="slideTimer">00:00.00</div>
+    <button id="startBtn">開始</button>
+    <button id="pauseBtn" disabled>暫停</button>
+    <button id="nextSlideBtn" disabled>下一張投影片</button>
+    <button id="undoBtn" disabled>按錯了</button>
+
+    <div class="statistics">
+        <h2>統計數據</h2>
+        <table id="statisticsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">投影片編號</th>
+                    <th onclick="sortTable(1)">花費時間</th>
+                    <th onclick="sortTable(2)">總時間</th>
+                </tr>
+            </thead>
+            <tbody id="statisticsList"></tbody>
+        </table>
+    </div>
+
+    <!-- 音效 -->
+    <audio id="bellSound" src="bell.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
