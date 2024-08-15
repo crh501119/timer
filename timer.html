@@ -41,6 +41,7 @@
     <button id="pauseBtn" disabled>暫停</button>
     <button id="nextSlideBtn" disabled>下一張投影片</button>
     <button id="undoBtn" disabled>按錯了</button>
+    <button id="testBtn">測試鈴聲</button> <!-- 新增的測試鈴聲按鈕 -->
 
     <div class="statistics">
         <h2>統計數據</h2>
@@ -60,6 +61,17 @@
     <audio id="bellSound" src="bell.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
+
+    <script>
+        // 播放鈴聲的函數
+        function playSound() {
+            var bellSound = document.getElementById('bellSound');
+            bellSound.play();
+        }
+
+        // 將測試鈴聲按鈕與播放鈴聲函數連接
+        document.getElementById('testBtn').addEventListener('click', playSound);
+    </script>
 
 </body>
 </html>
