@@ -16,7 +16,6 @@
         }
         .statistics {
             margin-top: 20px;
-            display: none; /* 默认隐藏统计信息 */
         }
         table {
             width: 100%;
@@ -59,9 +58,8 @@
     <button id="pauseBtn" disabled>暫停</button>
     <button id="nextSlideBtn" disabled>下一張投影片</button>
     <button id="undoBtn" disabled>按錯了</button>
-    <button id="toggleBtn">顯示詳細資料</button> <!-- 新增的折叠/展开按钮 -->
 
-    <div class="statistics" id="statisticsSection">
+    <div class="statistics">
         <h2>統計數據</h2>
         <table id="statisticsTable">
             <thead>
@@ -76,7 +74,7 @@
     </div>
 
     <!-- 版本信息显示在角落 -->
-    <div class="version">Version 1.0</div>
+    <div class="version">Version 1.1</div>
 
     <!-- 测试铃声按钮，移动到右上角 -->
     <button id="testBtn" class="test-button">測試鈴聲</button>
@@ -84,6 +82,18 @@
     <!-- 音效 -->
     <audio id="bellSound" src="bell.mp3" preload="auto"></audio>
 
+    <script>
+        // 播放鈴聲的函數
+        function playSound() {
+            const bellSound = document.getElementById('bellSound');
+            bellSound.play();
+        }
+
+        // 将测试按钮与播放铃声函数关联
+        document.getElementById('testBtn').addEventListener('click', playSound);
+    </script>
+
     <script src="script.js"></script>
+
 </body>
 </html>
